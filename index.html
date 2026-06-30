@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>OKINAWA DIVE TOUR</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hud">
+  <div class="pixel">OKINAWA DIVE TOUR</div>
+  <div id="coinCount" class="pixel"><div class="coin-icon" id="coinIcon"></div><span id="coinNum">0</span> / 5</div>
+  <button class="pixel" id="resetBtn">RESET</button>
+</div>
+
+<div id="world">
+  <div class="sun"></div>
+  <div class="cloud" style="top:30px; left:10%; width:70px; height:24px; border-radius:20px;"></div>
+  <div class="cloud" style="top:55px; left:65%; width:90px; height:28px; border-radius:20px;"></div>
+  <div class="cloud" style="top:20px; left:82%; width:50px; height:18px; border-radius:20px;"></div>
+  <div class="waterline"></div>
+
+  <svg id="okinawaMap" viewBox="0 0 600 1500" preserveAspectRatio="none">
+    <path d="M300 260 C340 300, 280 340, 320 380 C360 420, 400 400, 420 450 C440 500, 400 530, 430 580 C460 630, 500 610, 490 670 C480 730, 430 740, 450 800 C470 860, 520 850, 500 920"
+      stroke="#F4D58D" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <circle cx="180" cy="700" r="10" fill="#F4D58D"/>
+    <circle cx="150" cy="760" r="7" fill="#F4D58D"/>
+    <circle cx="200" cy="820" r="6" fill="#F4D58D"/>
+    <circle cx="560" cy="500" r="8" fill="#F4D58D"/>
+    <circle cx="540" cy="430" r="6" fill="#F4D58D"/>
+  </svg>
+
+  <svg id="pathSvg"><polyline id="pathLine" points="" fill="none" stroke="#F4D58D" stroke-width="6" stroke-dasharray="14 10" /></svg>
+
+  <div id="buoy">
+    <div class="ball"></div>
+    <div class="rope"></div>
+    <div class="sign">
+      <div class="pixel">OKINAWA</div>
+      <div class="pixel">DIVE TOUR</div>
+    </div>
+  </div>
+
+  <div class="fishdeco" style="top:330px; left:12%; font-size:22px;">🐟</div>
+  <div class="fishdeco" style="top:430px; left:75%; font-size:22px; animation-delay:2s;">🐠</div>
+  <div class="fishdeco" style="top:560px; left:30%; font-size:22px; animation-delay:4s;">🐡</div>
+  <div class="fishdeco" style="top:640px; left:60%; font-size:36px; animation-delay:1s; animation-duration:11s;">🐳</div>
+  <div class="fishdeco" style="top:760px; left:10%; font-size:28px; animation-delay:3s; animation-duration:8s;">🐙</div>
+  <div class="fishdeco" style="top:880px; left:78%; font-size:26px; animation-delay:2.5s; animation-duration:9s;">🐢</div>
+  <div class="fishdeco" style="top:980px; left:20%; font-size:20px; animation-delay:5s;">🐟</div>
+  <div class="fishdeco" style="top:1100px; left:65%; font-size:24px; animation-delay:1.5s; animation-duration:7s;">🦑</div>
+  <div class="fishdeco" style="top:1250px; left:35%; font-size:30px; animation-delay:0.5s; animation-duration:10s;">🐢</div>
+  <div class="fishdeco" style="top:1380px; left:70%; font-size:22px; animation-delay:3.5s;">🐠</div>
+
+  <div id="player" class="bob"></div>
+  <div id="controls">
+    <button class="btn icon-btn" id="upBtn" aria-label="UP" title="UP">▲</button>
+    <button class="btn" id="enterBtn">ENTER</button>
+    <button class="btn icon-btn" id="downBtn" aria-label="DOWN" title="DOWN">▼</button>
+  </div>
+</div>
+
+<div id="modalOverlay">
+  <div id="modalBox">
+    <div id="closeX">✕</div>
+    <div class="stagetag" id="modalTag">EP.01</div>
+    <h2 id="modalTitle"></h2>
+    <div class="creatures" id="modalCreatures"></div>
+    <p id="modalDesc"></p>
+    <button class="btn pixel" id="clearBtn">스테이지 클리어!</button>
+  </div>
+</div>
+
+<div id="toast" class="pixel"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
